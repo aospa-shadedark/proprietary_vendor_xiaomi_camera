@@ -1,9 +1,8 @@
-From fc7d40cf5b5d5fad04a3eaab830a84c247224ae2 Mon Sep 17 00:00:00 2001
+From 4a9436b38ebe43d9036f58cc1ca2207659830efb Mon Sep 17 00:00:00 2001
 From: Arian <arian.kulmer@web.de>
 Date: Tue, 23 Apr 2024 19:17:07 +0200
-Subject: [PATCH 3/9] Revert launcher icon back to MIUI 14
+Subject: [PATCH 3/7] Revert icon to cupid V14.0.2.0.TLCMICM
 
-Signed-off-by: Adithya R <gh0strider.2k18.reborn@gmail.com>
 ---
  res/mipmap-anydpi/ic_launcher_camera_cv.xml  |   6 ++++++
  res/mipmap-xhdpi/ic_launcher_camera_cv.png   | Bin 44414 -> 0 bytes
@@ -7468,5 +7467,5 @@ literal 0
 HcmV?d00001
 
 -- 
-2.34.1
+2.47.3
 
