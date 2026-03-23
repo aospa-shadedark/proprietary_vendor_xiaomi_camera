@@ -1,17 +1,17 @@
-From 727d260f0dda21b004a94d0242eacab9dfec8dfa Mon Sep 17 00:00:00 2001
+From 8f7465aa12e3ce85c4ca5b5d809468a174a594fa Mon Sep 17 00:00:00 2001
 From: Arian <arian.kulmer@web.de>
 Date: Fri, 8 Mar 2024 02:11:53 +0100
-Subject: [PATCH 5/9] Support third party galleries
+Subject: [PATCH 5/7] Support third party galleries
 
 ---
  smali/com/android/camera/l3.smali | 8 ++------
  1 file changed, 2 insertions(+), 6 deletions(-)
 
 diff --git a/smali/com/android/camera/l3.smali b/smali/com/android/camera/l3.smali
-index f348205c2..510101446 100644
+index a31fed201..2c0afb884 100644
 --- a/smali/com/android/camera/l3.smali
 +++ b/smali/com/android/camera/l3.smali
-@@ -1057,9 +1057,9 @@
+@@ -1051,9 +1051,9 @@
  
      invoke-direct {p0, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
  
@@ -23,7 +23,7 @@ index f348205c2..510101446 100644
  
      invoke-virtual {p1, p0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
  
-@@ -1166,10 +1166,6 @@
+@@ -1160,10 +1160,6 @@
      invoke-direct {p0, v0, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
  
      :goto_0
@@ -35,5 +35,5 @@ index f348205c2..510101446 100644
  
      const/4 p2, 0x1
 -- 
-2.34.1
+2.47.3
 
