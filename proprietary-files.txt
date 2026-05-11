@@ -1,5 +1,5 @@
 # From marble OS2.0.4.0.VMRMIXM package
--product/priv-app/MiuiCamera/MiuiCamera.apk:system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Camera,Camera2,GoogleCameraGo
+-product/priv-app/MiuiCamera/MiuiCamera.apk:system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Camera,Camera2,Aperture
 system_ext/lib64/libcamera_algoup_jni.xiaomi.so:system/lib64/libcamera_algoup_jni.xiaomi.so;SYMLINK=system/priv-app/MiuiCamera/lib/arm64/libcamera_algoup_jni.xiaomi.so
 system_ext/lib64/libcamera_mianode_jni.xiaomi.so:system/lib64/libcamera_mianode_jni.xiaomi.so;SYMLINK=system/priv-app/MiuiCamera/lib/arm64/libcamera_mianode_jni.xiaomi.so
 system_ext/lib64/libmicampostproc_client.so:system/lib64/libmicampostproc_client.so
