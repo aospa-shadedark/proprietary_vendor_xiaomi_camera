@@ -53,6 +53,49 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+function apktool_patch() {
+    local APK_PATH="$1"
+    shift
+
+    local PATCHES_PATH="$1"
+    shift
+
+    local PATCHES_PATHS=$(find "$PATCHES_PATH" -name "*.patch" | sort)
+    local APKTOOL_FRAMEWORK_ARGS=()
+
+    if [ "${SRC}" != "adb" ]; then
+        local FRAMEWORK_APK=""
+
+        for FRAMEWORK_APK_PATH in \
+            "${SRC}/system/system/framework/framework-res.apk" \
+            "${SRC}/system/framework/framework-res.apk"; do
+            if [ -f "${FRAMEWORK_APK_PATH}" ]; then
+                FRAMEWORK_APK="${FRAMEWORK_APK_PATH}"
+                break
+            fi
+        done
+
+        if [ -n "${FRAMEWORK_APK}" ]; then
+            local FRAMEWORK_DIR="${EXTRACT_TMP_DIR}/apktool-framework"
+            mkdir -p "${FRAMEWORK_DIR}"
+            apktool if "${FRAMEWORK_APK}" -p "${FRAMEWORK_DIR}"
+            APKTOOL_FRAMEWORK_ARGS=(-p "${FRAMEWORK_DIR}")
+        fi
+    fi
+
+    local TEMP_DIR=$(mktemp -dp "$EXTRACT_TMP_DIR")
+    apktool d "${APKTOOL_FRAMEWORK_ARGS[@]}" "$APK_PATH" -o "$TEMP_DIR" -f "$@"
+
+    while IFS= read -r PATCH_PATH; do
+        echo "Applying patch $PATCH_PATH"
+        # unsafe-paths is required since the directory is outside of the current working directory
+        git apply --unsafe-paths --directory="$TEMP_DIR" "$PATCH_PATH"
+    done <<<"$PATCHES_PATHS"
+
+    apktool b "${APKTOOL_FRAMEWORK_ARGS[@]}" "$TEMP_DIR" -o "$APK_PATH"
+
+    "$STRIPZIP" "$APK_PATH"
+}
 
 function blob_fixup() {
     case "${1}" in
