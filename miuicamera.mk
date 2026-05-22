@@ -13,7 +13,8 @@ PRODUCT_COPY_FILES += \
 # Properties
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera \
-    ro.com.google.lens.oem_camera_package=com.android.camera
+    ro.com.google.lens.oem_camera_package=com.android.camera \
+    vendor.camera.aux.packageexcludelist=in.org.npci.upiapp
 
 # Sepolicy
 BOARD_VENDOR_SEPOLICY_DIRS += \
