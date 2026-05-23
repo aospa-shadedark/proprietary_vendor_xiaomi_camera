@@ -26,6 +26,7 @@
 /vendor/lib(64)?/libmialgo_ie_capture\.so                u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libmialgo_utils\.so                     u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libmialgoengine\.so                     u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libprocessgroup_shim\.so                u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libmibokeh_712\.so                      u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libmpbase\.so                           u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/librelight_only\.so                     u:object_r:same_process_hal_file:s0
