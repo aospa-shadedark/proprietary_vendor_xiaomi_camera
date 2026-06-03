@@ -18,6 +18,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera \
     ro.com.google.lens.oem_camera_package=com.android.camera \
+    ro.miui.ui.version.code=816 \
+    ro.miui.ui.version.name=V816 \
     vendor.camera.aux.packageexcludelist=in.org.npci.upiapp
 
 # Sepolicy
